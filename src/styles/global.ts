@@ -12,6 +12,10 @@ body {
     font-family: 'Poppins', sans-serif;
     
     }
+    a {
+        cursor: pointer;
+        text-decoration: none;
+    }
     button{
         cursor: pointer;
         border: none;

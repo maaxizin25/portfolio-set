@@ -1,6 +1,4 @@
-interface iLanguagePortFolioItens {
-  navbar: Array<string>;
-}
+import { iLanguagePortFolioItens } from "../../mock/mock-langue";
 
 // Typagem para o children
 export interface iAppContextProps {
