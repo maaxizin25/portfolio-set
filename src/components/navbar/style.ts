@@ -36,6 +36,9 @@ export const NavBarStyled = styled.nav`
         display: flex;
         align-items: center;
       }
+      .select-language > img {
+        width: 35px;
+      }
     }
   }
   .container-open-modal {
@@ -45,8 +48,7 @@ export const NavBarStyled = styled.nav`
     width: 100%;
     animation: slideDown 500ms ease-in-out;
     z-index: 3;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
+    background-color: rgba(0, 0, 0, 0.9);
     ul {
       padding: 20px 0px 0px 20px;
       display: flex;
