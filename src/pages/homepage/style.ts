@@ -93,6 +93,7 @@ export const HomePageStyled = styled.div`
       h3,
       a {
         color: white;
+        font-weight: 900;
       }
       a {
         text-decoration: underline;
@@ -130,8 +131,11 @@ export const HomePageStyled = styled.div`
         width: 30%;
       }
       .welcome-text {
-        width: 360px;
+        width: 380px;
       }
+    }
+    .languages-container {
+      margin-top: 100px !important;
     }
   }
 `;

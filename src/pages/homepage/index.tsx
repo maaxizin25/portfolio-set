@@ -9,6 +9,7 @@ import linkedinimg from "../../assets/linkedinimg.png";
 import instaimg from "../../assets/instaimg.png";
 import { LineComponent } from "../../components/line";
 import { languagePortfolio } from "../../mock/mock-langue";
+import { AboutMeComponent } from "../../components/aboutMe";
 
 export const HomePage = () => {
   const { languageTexts } = useContext(AppContext);
@@ -43,25 +44,17 @@ export const HomePage = () => {
             </div>
             <div className="about-me-text">
               <div>
-                <h3>SOBRE MIM</h3>
-                <p>
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis...
-                </p>
-                <a href="">Saber mais</a>
+                <h3>{languageTexts.aboutMeOne.title}</h3>
+                <p>{languageTexts.aboutMeOne.subscription}</p>
+                <a href="">{languageTexts.aboutMeOne.button}</a>
               </div>
               <div>
-                <h3>SOBRE MIM</h3>
-                <p>
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis...
-                </p>
-                <a href="">Saber mais</a>
+                <h3>{languageTexts.aboutMeWork.title}</h3>
+                <p>{languageTexts.aboutMeWork.subscription}</p>
+                <a href="">{languageTexts.aboutMeWork.button}</a>
               </div>
               <div className="container-follow">
-                <h3>SIGA-ME</h3>
+                <h3>{languageTexts.buttonFollow}</h3>
                 <div className="imgs-follow">
                   <img src={gitimg} alt="" />
                   <img src={linkedinimg} alt="" />
@@ -71,6 +64,7 @@ export const HomePage = () => {
             </div>
           </div>
         </GlobalContainer>
+        <AboutMeComponent />
       </main>
     </HomePageStyled>
   );
