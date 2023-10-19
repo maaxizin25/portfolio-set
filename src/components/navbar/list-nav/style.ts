@@ -7,6 +7,9 @@ export const UlStyled = styled.ul`
     color: var(--font-secundary-color);
     cursor: pointer;
   }
+  li:hover {
+    color: white;
+  }
   .select-language {
     display: flex;
     justify-content: center;
