@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const NavBarStyled = styled.nav`
   position: fixed;
   width: 100%;
+  z-index: 1000;
   // Animations
   @keyframes slideDown {
     0% {
