@@ -7,6 +7,7 @@ import postgreImg from "../assets/postgreimg.png";
 import pythonImg from "../assets/pythonimg.png";
 import gitlangImg from "../assets/imgimglang.png";
 import nodeImg from "../assets/nodejsimg.png";
+import { portfolioItens } from "./portfolio-itens";
 
 export interface iLanguagePortFolioItens {
   navbar: Array<string>;
@@ -35,6 +36,14 @@ export interface iLanguagePortFolioItens {
     projectsCount: string;
     subscriptionProjects: string;
   };
+  portfolioItensList: Array<{
+    name: string;
+    description: string;
+    image: string;
+    buttonView: string;
+    buttonGit: string;
+    buttonVideo: string;
+  }>;
 }
 export interface langPortfolio {
   english: iLanguagePortFolioItens;
@@ -96,6 +105,7 @@ export const languagePortfolio: langPortfolio = {
       subscriptionProjects: `Throughout my journey in the field of programming, I had the incredible opportunity to collaborate on various projects at Kenzie Academy Brazil. These projects encompassed both individual and team work and played a crucial role in my professional growth. The experiences in group projects were particularly enriching, providing me with the opportunity to enhance my teamwork skills and understand the dynamics of the job market. These experiences not only allowed me to apply the knowledge gained at Kenzie Academy but also helped me gain valuable insights into how projects are executed in the real world.
       I am excited to continue my journey of learning and development, seizing every opportunity to grow as a professional in the field of programming.`,
     },
+    portfolioItensList: portfolioItens[1].english!,
   },
   portuguese: {
     navbar: ["INÍCIO", "GITHUB", "SOBRE MIM", "PORTFÓLIO", "CONTATO"],
@@ -129,5 +139,6 @@ export const languagePortfolio: langPortfolio = {
       subscriptionProjects:
         " Durante minha jornada na área de programação, tive a incrível oportunidade de colaborar em diversos projetos na Kenzie Academy Brasil. Esses projetos abrangeram tanto trabalhos individuais quanto em equipe, e desempenharam um papel fundamental no meu crescimento profissional.\n\nAs experiências em projetos em grupo foram especialmente enriquecedoras, proporcionando-me a oportunidade de aprimorar minhas habilidades de trabalho em equipe e compreender a dinâmica do mercado de trabalho. Essas experiências não apenas me permitiram aplicar o conhecimento adquirido na Kenzie Academy, mas também me ajudaram a ganhar uma visão valiosa sobre como os projetos são executados no mundo real.\n\nEstou entusiasmado por continuar a minha jornada de aprendizado e desenvolvimento, aproveitando cada oportunidade para crescer como profissional na área de programação.",
     },
+    portfolioItensList: portfolioItens[0].portuguese!,
   },
 };

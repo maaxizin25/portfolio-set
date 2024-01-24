@@ -12,8 +12,14 @@ import { NavBar } from "../../components/navbar";
 import { GlobalContainer } from "../../containers";
 import { PortfolioPageStyle } from "./style";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useContext } from "react";
+import { AppContext } from "../../context/appContext";
+import gitImg from "../../assets/gitimg.png";
+import buttonImgView from "../../assets/button-view-img.svg";
+import buttonImgVideo from "../../assets/button-video-img.svg";
 
 export const PortfolioPage = () => {
+  const { languageTexts } = useContext(AppContext);
   return (
     <div>
       <NavBar />
@@ -30,8 +36,7 @@ export const PortfolioPage = () => {
               effect={"coverflow"}
               grabCursor={true}
               centeredSlides={true}
-              slidesPerView={3}
-              initialSlide={1}
+              initialSlide={2}
               autoplay={{
                 delay: 2000,
               }}
@@ -44,54 +49,50 @@ export const PortfolioPage = () => {
               }}
               pagination={true}
               navigation={true}
+              breakpoints={{
+                280: {
+                  slidesPerView: 1,
+                },
+                440: {
+                  slidesPerView: 2,
+                },
+                768: {
+                  slidesPerView: 3,
+                },
+                // Adicione mais breakpoints conforme necessário
+              }}
               modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
               className="mySwiper"
             >
-              <SwiperSlide>
-                <div className="card-swiper">
-                  <h2>Hamburgueria</h2>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Optio recusandae laboriosam, earum libero ea aut obcaecati
-                    dolores eligendi eveniet, magni doloribus maxime, voluptates
-                    nihil sequi nemo quia. Corporis, odio magni!
-                  </p>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="card-swiper">
-                  <h2>Hamburgueria</h2>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Optio recusandae laboriosam, earum libero ea aut obcaecati
-                    dolores eligendi eveniet, magni doloribus maxime, voluptates
-                    nihil sequi nemo quia. Corporis, odio magni!
-                  </p>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="card-swiper">
-                  <h2>Hamburgueria</h2>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Optio recusandae laboriosam, earum libero ea aut obcaecati
-                    dolores eligendi eveniet, magni doloribus maxime, voluptates
-                    nihil sequi nemo quia. Corporis, odio magni!
-                  </p>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="card-swiper">
-                  <h2>Hamburgueria</h2>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Optio recusandae laboriosam, earum libero ea aut obcaecati
-                    dolores eligendi eveniet, magni doloribus maxime, voluptates
-                    nihil sequi nemo quia. Corporis, odio magni!
-                  </p>
-                </div>
-              </SwiperSlide>
-              ...
+              {languageTexts.portfolioItensList.map((e) => {
+                return (
+                  <SwiperSlide>
+                    <div className="card-swiper">
+                      <div className="card-swiper-img">
+                        <img src={e.image} alt="" />
+                      </div>
+                      <div className="description-and-buttons">
+                        <h2>{e.name}</h2>
+                        <p>{e.description}</p>
+                        <div>
+                          <button>
+                            <img src={buttonImgView} alt="" />
+                            <h3>{e.buttonView}</h3>
+                          </button>
+                          <button>
+                            <img src={gitImg} alt="" />
+                            <h3>{e.buttonGit}</h3>
+                          </button>
+                          <button>
+                            <img src={buttonImgVideo} alt="" />
+                            <h3>{e.buttonVideo}</h3>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                );
+              })}
             </Swiper>
           </div>
         </PortfolioPageStyle>
